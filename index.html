@@ -4,81 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
- 
-  <script defer src="main.js"></script></head> 
-
-<body >
-  
-  <div class="container">
-
-    <div class="header">
-      <div class="header">Tasks</div>
+    <script>
+    function toggleFormPopup(form) {
+        const popup = document.querySelector(form);
+        popup.classList.toggle("show");
+        }
+    function myFunction() {
+        document.querySelector("#MyProjects").style.color = "lightblue";
+       }  
     
-      <button class="btn-open-popup" onclick="togglePopup()">Add Task</button>
+    </script>
+<script defer src="main.js"></script></head>
+<body>
+    <header class="header" > <img class="logo-png"><h2>Another ToDo</h2></header>
+    <div class="main_container">
+        <div class="container">
 
-    
-    </div>
-   
-    <div id="popupOverlay" class="overlay-container">
-      <div class="popup-box">
-        <h6 style="color: green;">Add a k</h6>
-        <form class="form-container">
-          <label class="form-label" for="title">Title:</label>
-          <input class="form-input" 
-                 type="text" 
-                 placeholder="Enter Book Title" 
-                 id="title" 
-                 name="title" 
-                 required>
-
-          <label class="form-label" for="author">Author:</label>
-          <input class="form-input" 
-                 type="text" 
-                 placeholder="Enter Book Author" 
-                 id="author" 
-                 name="author" 
-                 required>
-
-          <label class="form-label" for="pages">Number Of Pages:</label>
-          <input type="number" 
-                 id="pages" 
-                 name="pages" 
-                 min="1">
-
-          <fieldset>
-            <p>
-              <input type="radio" name="read" id="read" value="Read" />
-              <label class="form-label" for="read">Read</label>
-            </p>
-            <p>
-              <input type="radio" name="read" id="not-read" value="Not Read" />
-              <label class="form-label" for="read">Not Read</label>
-            </p>
-          </fieldset>
-
-          <label class="form-label" for="comment">Comment:</label>
-          <textarea id="comment" name="comment"></textarea>
-
-        <div>
-          <button class="btn-submit"  type="submit" onclick="togglePopup()" >Submit</button>
-          
-        </form>
-        
-         <button class="btn-close-popup" onclick="togglePopup()">Close</button>
         </div>
-      </div>
-    </div>
-  
+        <ul class="sidebar__inner">
+
+            <li class="form" tabindex="1" id="All Tasks">
+                <img class="inbox-png">
+                <span class="title">All Tasks</span>
+                 
+            </li>
+            
+            <li class="form" tabindex="1" id="Today">
+                <img class="today-png">
+                <span class="title">Today</span>
+            </li>
+            
+            <li class="form" tabindex="1" id="This Week">
+                <img class="week-png">
+                <span class="title">This Week</span>
+            </li>
+            
+            
+            <li class="form" tabindex="1" id="Important">
+                <img class="important-png">
+                <span class="title">Important</span>
+            </li>
+            
+            <li class="form" tabindex="1" id="Completed">
+                <img class="completed-png">
+                <span class="title">Completed</span>
+            </li>
+           
+            <div class="addProject-wrapper">
+            
+                <li class="form" id="AddProject">
+                <span class="title">Add Project</span>
+                <button class="add-project" onclick="toggleFormPopup('.add-project-form-container')">+</button>
+                </li> 
+            </div>
+            
+            <div class="projects-container">
+            
+            </div>
+         </ul>
+        
+ 
+            <form class="form-container">
+               <div id="popupOverlay" class="add-project-form-container">
+                    <div class="form-card">
+                        <a class="projectTitle">Add a Project</a>
+
+                        <div class="inputBox">
+                            <input type="text" id="projectTitle" name="projectTitle" required="required">
+                            <span>Title</span>
+                        </div>
+                        
+                        <div>
+                            <button class="btn-submit" type="submit" onclick="toggleFormPopup('.add-project-form-container')" >Submit</button>
+                            <input type="reset"  button class="btn-close-popup"  value="CANCEL" onClick="toggleFormPopup('.add-project-form-container')">
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form class="form-container-edit">
+                
+                <div id="popupOverlay" class="edit-project-form-container">
+                    <div class="form-card">
+                        <a class="projectTitle">Edit Project</a>
+                        
+                        <div class="inputBox">
+                            <input type="text" id="projectTitle" name="projectTitle" required="required">
+                            <span>Title</span>
+                        </div>
+                        
+                        <div>
+                            <button class="btn-submit" type="submit" onclick="toggleFormPopup('.edit-project-form-container')">Submit</button>
+                            <input type="reset"  button class="btn-close-popup"  value="CANCEL" onClick="toggleFormPopup('.edit-project-form-container')">
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form class="form-container2">
+                <div id="popupOverlay" class="add-task-form-container">
+                    <div class="form2-card">
+                        <a class="taskTitle">Add Task</a>
+                        
+                        <div class="inputBox">
+                            <input type="text" id="taskTitle" name="taskTitle" required="required">
+                            <span>Title</span>
+                        </div>
+                        
+                        <div class="inputBox">
+                            <input type="date" id="dueDate" name="dueDate" class="fcf-form-control" required="required">
+                        </div>
+                        
+                        <div class="inputBox">
+                            <textarea rows="10" cols="32" name="taskDetails" class="form-control" tabindex="6" required="required"></textarea>
+                            <span>Details</span>
+                        </div>
+                        
+                        <div>
+                            <button class="btn-submit" type="submit" onclick="toggleFormPopup('.add-task-form-container')" >Submit</button>
+                            <input type="reset"  button class="btn-close-popup"  value="CLOSE" onClick="toggleFormPopup('.add-task-form-container')">
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form class="form-container3">
+               
+                <div id="popupOverlay" class="edit-task-form-container">
+                    <div class="form2-card">
+                        <a class="taskTitle">Edit Task</a>
+
+                        <div class="inputBox">
+                            <input type="text" id="taskTitle" name="taskTitle" required="required">
+                            <span>Title</span>
+                        </div>
+
+                        <div class="inputBox">
+                            <input type="date" id="dueDate" name="dueDate" class="fcf-form-control" required="">
+                        </div>
+
+                        <div class="inputBox">
+                            <textarea rows="10" cols="32" name="taskDetails" class="form-control" tabindex="6" required="required"></textarea>
+                            <span>Details</span>
+                        </div>
+
+                        <div>
+                            <button class="btn-submit" type="submit" onclick="toggleFormPopup('.edit-task-form-container')" >Submit</button>
+                            <input type="reset"  button class="btn-close-popup"  value="CLOSE" onClick="toggleFormPopup('.edit-task-form-container')">
+                        </div>
+                    
+                    </div>
+                </div>
+            </form>
    
-    
-   <div class="library-shelves">
-    
+    </div>
 
     
-  </div>
+    <footer class="footer">
+        <p>Icons by:</p><p><a href="https://icons8.com/">icons8</a></p>
+    </footer>
 
-    
-  </div>
-</div>
+
 </body>
 </html>
