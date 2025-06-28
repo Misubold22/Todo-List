@@ -1,0 +1,751 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+}
+
+body .header {
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to right, #E44332, #A8261F);
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 10px;
+}
+
+body h2{
+  padding-top: 10px;
+  padding-left: 7px;
+}
+
+body .main_container{
+  flex: 1 0 auto;
+  display: flex;
+}
+
+body .main_container .container {
+  flex: 1 0 auto;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:0px;
+  padding-top: 2rem;;
+}
+
+body .main_container .sidebar__inner{
+  width: 300px;
+  list-style: none;
+  text-align: left;
+  order: -1;
+  background: #FAFAFA;
+  margin: 0;
+  padding-top: 2rem;
+}
+
+.main_container .sidebar__inner ul li a ,.form{
+  color: black;
+  font-size: 16px;
+  padding: 15px 20px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1px;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding-left: 10px;
+}
+
+.form{
+  list-style-type: circle;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-right: 2rem;
+  position: relative;
+  margin-left: 1rem;
+  height: 10px;
+  margin-right: 1rem;
+  color: black
+}
+
+.today-png,
+.week-png,
+.important-png,
+.inbox,
+.inbox-png,.completed-png {
+  padding: 0 6px 0 0;
+  width: 22px;
+  height: 22px;
+}
+
+.logo-png {
+  content: url("./images/logo.png");
+  width: 30px;
+  height: 30px;
+  padding-left: 1.5rem;
+  padding-top: 0.5em;
+  margin-right: -5px;
+}
+
+.today-png {
+  content: url("./images/today.png");
+}
+
+.project {
+  padding: 0 2px 0 0;
+  width: 26px;
+}
+
+.week-png {
+  content: url("./images/week.png");
+}
+
+.important-png {
+  padding-right: 4px;
+  margin-left: -1px;
+  width: 26px;
+  height: 26px;
+  content: url("./images/important.png");
+}
+
+.project {
+  content: url("./images/project.png");
+}
+.inbox-png {
+  content: url("./images/inbox.png");
+}
+.completed-png {
+  margin-left: -1px;
+  width: 26px;
+  height: 26px;
+  content: url("./images/completed.png");
+  padding-right: 4px;
+}
+
+.inbox {
+  width: 40px;
+  height: 42px;
+  margin-right: -0.9rem;
+  margin-top: -0.5rem;
+  content: url("./images/inbox.png");
+}
+
+.today {
+  width: 40px;
+  height: 40px;
+  margin-right: -0.7rem;
+  margin-top: -0.5rem;
+  content: url("./images/today.png");
+}
+
+.thisWeek {
+  width: 40px;
+  height: 40px;
+  margin-right: -0.6rem;
+  margin-top: -0.5rem;
+  content: url("./images/week.png");
+}
+
+.important,.completed {
+  width: 43px;
+  height: 43px;
+  margin-right: -0.8rem;
+  margin-top: -0.5rem;
+  content: url("./images/important.png");
+}
+
+.completed {
+  content: url("./images/completed.png");
+}
+
+
+.projectImg {
+  width: 44px;
+  height: 42px;
+  margin-right: -1.1rem;
+  margin-top: -0.5rem;
+  content: url("./images/project.png");
+}
+
+.star {
+  visibility:hidden;
+  font-size:30px;
+  cursor:pointer;
+  position:absolute;
+  padding:0px;
+  top: 8px;
+  right: 6.5rem;
+  margin-top: 0.4rem;
+  color:oklch(70.7% 0.165 254.624);
+}
+
+.star:before {
+ content: "\2606";
+ position: absolute;
+ visibility:visible;
+ 
+}
+.star:checked:before {
+  content: "\2605";
+  position: absolute;
+  color: oklch(90.5% 0.182 98.111);
+}
+
+.star:hover {
+  color: oklch(90.5% 0.182 98.111);
+}
+
+.delete-task,.add-task{
+  margin-right: 1rem;
+}
+.form .edit-task:after,.form .edit-task:after{
+  content: '\2807';
+  font-size: 20px;
+  padding-left:4px
+}
+  
+.main_container .sidebar__inner ul li a .icon{
+  margin-right: 15px;
+  font-size: 28px;
+}
+
+.main_container .sidebar__inner ul li a span{
+  display: inline-block;
+}
+
+.main_container .sidebar__inner ul li a:hover,
+.main_container .sidebar__inner ul li a.active{
+  background: #fff;
+  color: oklch(55.4% 0.046 257.417);
+}
+
+.form:hover,.card:hover{
+  background: #E5E7EB;
+}
+
+
+.form:focus{
+  background-color:	#FDE8E6;
+  color: #E44332;
+}
+
+#AddProject{
+ margin-top: 1rem;
+ color: 	#343A40;
+margin-left: 1.3rem;
+}
+#AddProject:hover{
+ background-color: #FAFAFA;
+}
+
+.form .add-project,.form .delete-project,.form .edit-project{
+  color: #E44332;
+  font-weight: bold;
+  font-size: 18px;
+  padding:0px;
+  position: absolute;
+  height: 1.2em;
+  width: 1.2em;
+  right: 16px;
+  margin-top: 0rem;
+  box-shadow: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #E5E7EB;
+  border: 0px solid #E5E7EB;
+}
+
+.form .edit-project {
+  left: 12.5rem;
+  height: 22.2px;
+  width: 21.7px;
+  font-size: 16px;
+  padding-bottom: 1rem;
+  color: #E44332;
+}
+
+.form .delete-project{ 
+  height: 1.4em;
+  width: 1.3em;
+  padding-bottom: 1rem;
+  font-size: 16px;
+  color: #E44332;
+}
+
+.delete-project:hover ,.edit-project:hover,.form .add-project:hover {
+  color:  white;  
+  background-color: #E44332;
+  border:1px solid #E44332;
+}
+
+.form .add-project {
+  background-color: #FAFAFA;
+  pointer-events: auto;
+}
+
+.delete-project,.edit-project,.edit-task,.delete-task{
+  display: none;
+}
+ #MyProjects:hover #MyProjects{
+  background: #E5E7EB;
+}
+
+#MyProjects:hover .delete-project, #MyProjects:hover .edit-project,.card:hover .edit-task,.card:hover .delete-task{
+ display: inline-block;
+}
+.form:focus-within .delete-project,.form:focus-within .edit-project   {
+  background-color:	#FDE8E6;
+  color: #E44332;
+}
+
+.form:focus-within .delete-project:hover,
+.form:focus .delete-project:hover ,.form:focus-within .edit-project:hover,
+.form:focus .edit-project:hover{
+  color:  white;  
+  background-color: #E44332;
+  border:1px solid #E44332;
+}
+
+.add-task,.edit-task,.delete-task {
+  color: #E44332;
+  font-weight: bold;
+  font-size: 18px;
+  padding:0px;
+  position: absolute;
+  height: 1.2em;
+  width: 1.2em;
+  box-shadow: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #E5E7EB;
+  border: 1px solid #E5E7EB;
+  top: 0;
+  margin-left:-29.2rem;
+  margin-top:3.8rem;
+}
+
+.add-task{
+  background-color: white;
+  border: 1px solid white;
+}
+
+.Add-task{
+  top: 0;
+  position: absolute;
+  top: 0;
+  margin-left:-47.5rem;
+  margin-top:3.8rem;
+  font-size: 16px;
+  cursor: default;
+  color:black
+}
+
+.delete-task{
+  top: 8px;
+  margin-top: 1.2rem;
+  right: 1px;
+  height: 1.4em;
+  width: 1.3em;
+  font-size: 16px;
+  line-height:1.3em;
+}
+
+.edit-task {
+  top: 8px;
+  right: 55px;
+  margin-top: 1.2rem;
+  height: 22.2px;
+  width: 21.7px;
+  font-size: 16px;
+}
+
+
+.edit-task:after,.edit-project:after{
+  content: '\2807';
+  font-size: 14px;
+  margin-top: 1rem;
+  padding-left:4px
+}
+
+.delete-task:hover ,.edit-task:hover,.add-task:hover,.edit-project:hover{
+  box-shadow: none;
+  cursor: pointer;
+  color:  white;  
+  background-color: #E44332;
+  border:1px solid #E44332;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  width: 65%;
+  padding: 2px;
+  overflow: hidden;
+  line-height: 1.6;
+  height: 70px;
+  border-radius:0px;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  z-index: 0;
+  border-bottom:1px solid #E5E7EB;
+}
+
+.projectCard,.SidebarCardElements{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width:62.4%;
+  background:   white;
+  overflow: hidden;
+  line-height: 1.6;
+  margin-left: -1.5rem;
+  margin-top:5rem;
+  margin:2px;
+  padding:20px;
+  padding-top:5px;
+  border-bottom:1px solid black;
+}
+
+.projectCard .content .heading,.SidebarCardElements .content .heading {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.3;
+  z-index: 1;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  color: black;
+  margin-left:-18px;
+  margin-top: -2.5rem;
+
+}
+
+.content {
+  gap: 24px;
+  padding: 34px;
+  border-radius: 22px;
+  color:#f5f5f5;
+  overflow: hidden;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: default;
+}
+
+.content .heading {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+  z-index: 1;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  color: black;
+  margin-left:-18px;
+  margin-top: -1.5rem;
+
+}
+
+.content .para {
+  z-index: 1;
+  opacity: 0.8;
+  font-size: 14px;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  color: black;
+  display: flex;
+  align-items: flex-start;
+  margin-left:-18px;
+}
+
+.content .date {
+  z-index: 1;
+  opacity: 0.8;
+  font-size: 14px;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  color: black;
+  padding:0px;
+  position: absolute;
+  top: 8px;
+  right: 8rem;
+  margin-top: 1.3rem;
+ }
+
+.projectTitle,.taskTitle{
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  font-weight: bold;
+  font-size: x-large;
+}
+.title{
+  text-decoration: none;
+  cursor: default;
+}
+
+.addProject-wrapper{
+  pointer-events: none;
+}
+
+.form-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+  width: 300px;
+  flex-direction: column;
+  gap: 35px;
+  background: #E5E7EB;
+  box-shadow: 16px 16px 32px #c8c8c8,
+  -16px -16px 32px #fefefe;
+  border-radius: 8px;
+  position: fixed;
+  inset: 0px;
+  height: 30%;
+  margin: auto;
+}
+
+.inputBox {
+  position: relative;
+  width: 250px;
+}
+
+.inputBox input ,.inputBox textarea {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 8px;
+}
+
+.inputBox span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-4px);
+  margin-left: 10px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color:oklch(55.4% 0.046 257.417);
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 3px;
+  border-radius: 8px;
+}
+
+.inputBox input:valid~span,.inputBox textarea:valid~span,
+.inputBox input:focus~span ,.inputBox textarea:focus~span {
+  transform: translateX(113px) translateY(-15px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #000;
+  letter-spacing: 0.2em;
+  color: #fff;
+  border: 2px;
+}
+
+.inputBox input:valid,.inputBox textarea:valid,
+.inputBox input:focus,.inputBox textarea:focus {
+    border: 2px solid #000;
+  border-radius: 8px;
+   
+  
+}
+
+.enter,.btn-submit,.btn-close-popup {
+  height: 45px;
+  width: 90px;
+  border-radius: 5px;
+  border: 2px solid #000;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.5s;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 1em;
+  gap: 5px;
+}
+
+.btn-close-popup:hover {
+  background-color:#E44332;
+  color:white;
+  border: 2px solid #E44332;
+}
+.enter:hover,.btn-submit:hover {
+  background-color:#44BF00;
+  color:white;
+  border: 2px solid #44BF00;
+}
+
+.add-project-form-container,.add-task-form-container,.edit-task-form-container,.edit-project-form-container{
+	display: none;
+	position: fixed;
+  z-index: 3;
+}
+  
+ 
+.add-project-form-container.show,.add-task-form-container.show ,.edit-task-form-container.show,.edit-project-form-container.show{
+  display: flex;
+  opacity: 1;
+}
+    
+.form2-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 550px;
+  width: 350px;
+  flex-direction: column;
+  gap: 35px;
+  background: #E5E7EB;
+  box-shadow: 16px 16px 32px #c8c8c8,
+  -16px -16px 32px #fefefe;
+  border-radius: 8px;
+  position: fixed;
+  inset: 0px;
+  height: 30%;
+  margin: auto;
+  
+}
+
+.text {
+  padding: 5px;
+  position: relative;
+  left: 75px;
+  top: 5px;
+  background: #bebebe;
+  width: 100px;
+  height: 15px;
+  color: black;
+  display: none;   /* <----- hides text by default */
+}
+
+.checkbox-container input{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 15px;
+  user-select: none;
+}
+
+
+.checkmark:hover{
+  box-shadow: none;
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid   #44BF00;
+  color:  #44BF00;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  margin-left:18px;
+  margin-top:1.7rem;
+  height: 1.2em;
+  width: 1.2em;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid oklch(55.4% 0.046 257.417);  
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #44BF00;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 0.40em;
+  top: 0.18em;
+  bottom:2px;
+  width: 0.20em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+body .footer {
+  width: 100%;
+  height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: oklch(97.1% 0.013 17.38);
+  color: #343A40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.footer p {
+  padding: 2px;
+  font-family: Montserrat;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #343A40;
+  font-weight: lighter;
+}
+
+a{
+color: #343A40;
+text-decoration: none
+}
+
+a:hover {
+color:#E44332;
+}
+
+@media (max-width: 880px) {
+  body .main_container{
+    flex-direction: column;
+  }
+  body .main_container {
+    width: 100%;
+  }
+  body .main_container .sidebar__inner {
+    width: 40%;
+  }
+
+}
+
